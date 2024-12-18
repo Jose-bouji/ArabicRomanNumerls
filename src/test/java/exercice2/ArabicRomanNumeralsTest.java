@@ -93,4 +93,13 @@ public class ArabicRomanNumeralsTest {
     }
 
 
+    @Test
+    public void testConvert50ToRoman() {
+
+        String resultat50 = ArabicRomanNumerls.convert(50);
+
+        assertEquals("L", resultat50);
+    }
+
+
 }
