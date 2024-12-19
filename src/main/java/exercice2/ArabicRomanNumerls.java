@@ -1,56 +1,40 @@
-
 package exercice2;
 
 public class ArabicRomanNumerls {
 
     public static String convert(int number) {
-        // Implémentation minimale pour que le test passe
-        if (number == 1){
-            return "I";
+        StringBuilder roman = new StringBuilder();
+
+        if (number >= 50) {
+            roman.append("L");
+            number = number - 50;
         }
-        else if (number == 2) {
-            return "II";
+        if (number >= 40) {
+            roman.append("XL");
+            number = number - 40;
+        }
+        while (number >= 10) {
+            roman.append("X");
+            number = number - 10;
+        }
+        if (number >= 9) {
+            roman.append("IX");
+            number = number - 9;
+        }
+        if (number >= 5) {
+            roman.append("V");
+            number = number - 5;
+        }
+        if (number >= 4) {
+            roman.append("IV");
+            number = number - 4;
+        }
+        while (number >= 1) {
+            roman.append("I");
+            number = number - 1;
         }
 
-        else if (number == 3){
-            return "III";
-        }
-        else if (number == 10){
-            return "X";
-        }
-
-        else if (number== 20 )
-        {
-            return "XX";
-        }
-
-    else if (number == 30)
-        {
-        return "XXX";
-        }
-
-    else if (number == 11)
-        {
-            return "XI";
-        }
-
-
-        else if (number == 5)
-        {
-            return "V";
-        }
-
-        else if (number == 4)
-        {
-            return "IV";
-        }
-
-        else if (number == 9)
-        {
-            return "IX";
-        }
-        return "";
+        return roman.toString();
     }
-
 }
 
